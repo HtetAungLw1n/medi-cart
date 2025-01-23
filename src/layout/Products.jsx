@@ -1,11 +1,16 @@
 import React from "react";
 import MedicineList from "../components/MedicineList";
+import ControlBar from "../components/ControlBar";
+import Pagination from "../components/Pagination";
 
 const Products = () => {
   return (
-    <section className="bg-background text-textcolor px-4">
-      <p className="text-2xl">Medicine</p>
-      <MedicineList />
+    <section className="bg-background text-textcolor px-8 py-4">
+      <div className="container">
+        <ControlBar />
+        <MedicineList />
+        <Pagination />
+      </div>
     </section>
   );
 };
