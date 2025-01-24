@@ -9,22 +9,51 @@ const reducer = (state, action) => {
 
     let updatedMedicines;
 
-    const existMedicinesIndex = state.medicines.findIndex(
+    const existMedicineIndex = state.medicines.findIndex(
       (item) => item.id === action.medicine.id
     );
 
-    const existMedicine = state.medicines[existMedicinesIndex];
+    const existMedicine = state.medicines[existMedicineIndex];
 
     if (existMedicine) {
-      const updateMedine = {
+      const updateMedcine = {
         ...existMedicine,
         quantity: existMedicine.quantity + action.medicine.quantity,
       };
 
       updatedMedicines = [...state.medicines];
-      updatedMedicines[existMedicinesIndex] = updateMedine;
+      updatedMedicines[existMedicineIndex] = updateMedcine;
     } else {
       updatedMedicines = state.medicines.concat(action.medicine);
+    }
+
+    return {
+      medicines: updatedMedicines,
+      totalPrice: updateTotalPrice,
+    };
+  }
+  if (action.type === "REMOVE_MEDICINE") {
+    const existMedicineIndex = state.medicines.findIndex(
+      (item) => item.id === action.id
+    );
+
+    const existMedicine = state.medicines[existMedicineIndex];
+
+    const updateTotalPrice = state.totalPrice - existMedicine.price;
+
+    let updatedMedicines;
+
+    if (existMedicine.quantity === 1) {
+      updatedMedicines = state.medicines.filter(
+        (item) => item.id !== action.id
+      );
+    } else {
+      const updatedMedicine = {
+        ...existMedicine,
+        quantity: existMedicine.quantity - 1,
+      };
+      updatedMedicines = [...state.medicines];
+      updatedMedicines[existMedicineIndex] = updatedMedicine;
     }
 
     return {

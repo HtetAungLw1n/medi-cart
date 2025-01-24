@@ -13,11 +13,13 @@ const CartList = (props) => {
           <>
             <h1 className="text-xl">Your Orders ({medicines.length})</h1>
             <div className="max-h-[50vh] overflow-y-auto my-4">
-              <CartItem />
-              <div className="flex text-xl gap-4">
-                <p>Total Price : </p>
-                <p>$ {totalPrice.toFixed(2)}</p>
-              </div>
+              {medicines.map((medicine) => (
+                <CartItem key={medicine.id} medicine={medicine} />
+              ))}
+            </div>
+            <div className="flex text-xl gap-4">
+              <p>Total Price : </p>
+              <p>$ {totalPrice.toFixed(2)}</p>
             </div>
           </>
         )}
