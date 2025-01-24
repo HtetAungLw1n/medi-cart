@@ -8,7 +8,7 @@ const MedicineList = () => {
     <>
       <div className="medicine-list mt-4">
         {state.map((medicine) => (
-          <Medicine key={medicine.key} medicine={medicine} />
+          <Medicine key={medicine.id} medicine={medicine} />
         ))}
       </div>
     </>
