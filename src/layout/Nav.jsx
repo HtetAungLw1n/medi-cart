@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ItemsContext } from "../store/ItemContextProvider";
 
 const Nav = (props) => {
+  //carts number
+  const { medicines } = useContext(ItemsContext);
+  const totalMedicines = medicines.reduce((prev, medicine) => {
+    return prev + medicine.quantity;
+  }, 0);
+
   return (
     <div className="bg-primary text-background px-8 h-14 relative">
       <div className="container flex justify-between items-center h-full">
@@ -14,7 +21,7 @@ const Nav = (props) => {
 
           <p className="hover:text-emerald-200 transition duration-200">
             <button href="" onClick={props.showCartHandler}>
-              Carts <span>( 0 )</span>
+              Carts <span>( {totalMedicines} )</span>
             </button>
           </p>
         </div>

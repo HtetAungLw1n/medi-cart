@@ -5,18 +5,15 @@ import Pagination from "./Pagination";
 const ControlBar = () => {
   return (
     <>
-      <div className="flex justify-between items-center py-4">
+      <div className="flex justify-between items-start py-4">
+        <Fliter />
         <div>
-          <p className="text-2xl mb-4">Common Dose</p>
-          <Fliter />
-        </div>
-        <div>
+          <Pagination />
           <input
             type="text"
             placeholder="search"
-            className="block outline-none border-2 border-textcolor rounded pl-2 mb-4"
+            className="block outline-none border-2 border-textcolor rounded pl-2"
           />
-          <Pagination />
         </div>
       </div>
     </>

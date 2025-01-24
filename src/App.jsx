@@ -3,6 +3,7 @@ import Products from "./layout/Products";
 import Footer from "./layout/Footer";
 import { useState } from "react";
 import Backdrop from "./components/Backdrop";
+import ItemContextProvider from "./store/ItemContextProvider";
 
 function App() {
   const [isShow, setIsShow] = useState(false);
@@ -15,12 +16,14 @@ function App() {
   };
 
   return (
-    <section className="relative">
-      <Nav showCartHandler={showCartHandler} />
-      <Products />
-      <Footer />
-      <Backdrop isShow={isShow} hideCartHandler={hideCartHandler} />
-    </section>
+    <ItemContextProvider>
+      <section className="relative">
+        <Nav showCartHandler={showCartHandler} />
+        <Products />
+        <Footer />
+        <Backdrop isShow={isShow} hideCartHandler={hideCartHandler} />
+      </section>
+    </ItemContextProvider>
   );
 }
 
