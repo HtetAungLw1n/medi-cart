@@ -2,7 +2,7 @@ import React from "react";
 import Fliter from "../components/Fliter";
 import Pagination from "./Pagination";
 
-const ControlBar = () => {
+const ControlBar = (props) => {
   return (
     <>
       <div className="flex justify-between items-start py-4">
@@ -13,6 +13,9 @@ const ControlBar = () => {
             type="text"
             placeholder="search"
             className="block outline-none border-2 border-textcolor rounded pl-2"
+            onChange={(e) => {
+              props.searchFun(e.target.value);
+            }}
           />
         </div>
       </div>

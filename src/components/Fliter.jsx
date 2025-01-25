@@ -5,7 +5,7 @@ const Fliter = () => {
     <section className="flex flex-col">
       <div className="text-2xl mb-4">Fliter</div>
       <button className="bg-accent px-3 border-2 border-textcolor rounded">
-        options +
+        coming soon ...
       </button>
     </section>
   );

@@ -9,7 +9,7 @@ const Nav = (props) => {
   }, 0);
 
   return (
-    <div className="bg-primary text-background px-8 h-14 relative">
+    <div className="bg-primary text-background px-8 h-14 fixed w-full">
       <div className="container flex justify-between items-center h-full">
         <div>
           <h1 className="text-2xl">MediCart</h1>
