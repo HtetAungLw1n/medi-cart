@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className="bg-primary rounded-t-3xl">
+      <div className="bg-primary">
         <div className="container text-center py-8 text-background">
           <p className="text-4xl">ALL IN ONE PLACE</p>
           <p className="text-4xl">

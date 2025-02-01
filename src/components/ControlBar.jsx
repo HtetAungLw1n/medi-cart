@@ -12,7 +12,7 @@ const ControlBar = (props) => {
           <input
             type="text"
             placeholder="search"
-            className="block outline-none border-2 border-textcolor rounded pl-2"
+            className="block outline-none border-2 border-textcolor pl-2 py-1"
             onChange={(e) => {
               props.searchFun(e.target.value);
             }}
