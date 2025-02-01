@@ -1,8 +1,11 @@
 # MediCart
 
 MediCart is a web-based cart system designed for an online medicine-selling platform.
-Built using React, it provides a seamless shopping experience with responsive design,
+Built using React, it provides a seamless responsive design,
 intuitive interface, and core functionalities like product listing, cart management, and checkout simulation.
+
+![Alt text](public/desktopSize.png)
+![Alt text](public/phoneSize.png)
 
 ## Features:
 

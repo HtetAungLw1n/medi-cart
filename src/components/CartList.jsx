@@ -29,7 +29,7 @@ const CartList = (props) => {
             Close
           </button>
           {medicines.length !== 0 && (
-            <button className="bg-accent border-2 border-textcolor rounded px-4 py-2 ml-4">
+            <button className="bg-accent border-2 border-textcolor px-4 py-2 ml-4">
               Order
             </button>
           )}
